@@ -1,0 +1,4 @@
+*.swp
+/wandb
+*.safetensors
+*.pt
