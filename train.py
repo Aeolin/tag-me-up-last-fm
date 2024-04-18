@@ -10,8 +10,13 @@ from peft import LoraConfig, get_peft_model, PeftModel
 import transformers
 from datetime import datetime
 
+project = "tag-me-up-daddy-3"
+base_model_name = "mistral"
+run_name = base_model_name + "-" + project
+output_dir = "./" + run_name
+
 os.environ["WANDB_API_KEY"] = "975f16bcc5c0821264144a8460b0aed908261e55"
-os.environ["WANDB_PROJECT"] = "tag-met-up-daddy"
+os.environ["WANDB_PROJECT"] = project
 os.environ["WANDB_ENTITY"] = "aeolin"
 wandb.login()
 
@@ -19,7 +24,6 @@ train = [x for x in open('train_data.txt', 'rt').readlines()]
 eval = [x for x in open('test_data.txt', 'rt').readlines()]
 
 print(f'loaded training data: train: {len(train)}, eval: {len(eval)}')
-
 
 base_model_id = "mistralai/Mistral-7B-Instruct-v0.2"
 bnb_config = BitsAndBytesConfig(
@@ -45,8 +49,8 @@ def formatting_func(data):
 def generate_and_tokenize_prompt(prompt):
     return tokenizer(formatting_func(prompt))
 
-tokenized_train_dataset = map(generate_and_tokenize_prompt, train)
-tokenized_val_dataset = map(generate_and_tokenize_prompt, eval)
+tokenized_train_dataset = zip(train, map(generate_and_tokenize_prompt, train))
+tokenized_val_dataset = zip(eval, map(generate_and_tokenize_prompt, eval))
 
 max_length = 2000 # This was an appropriate max length for my dataset
 
@@ -60,8 +64,11 @@ def generate_and_tokenize_prompt2(prompt):
     result["labels"] = result["input_ids"].copy()
     return result
 
-tokenized_train_dataset = list(map(generate_and_tokenize_prompt2, train))
-tokenized_val_dataset = list(map(generate_and_tokenize_prompt2, eval))
+cleaned_train = filter(lambda pair: len(pair[1]['input_ids']) <= max_length, tokenized_train_dataset)
+cleaned_eval = filter(lambda pair: len(pair[1]['input_ids']) <= max_length, tokenized_val_dataset)
+
+tokenized_train_dataset = list(map(generate_and_tokenize_prompt2, [x[0] for x in cleaned_train]))
+tokenized_val_dataset = list(map(generate_and_tokenize_prompt2, [x[0] for x in cleaned_eval]))
 
 model.gradient_checkpointing_enable()
 model = prepare_model_for_kbit_training(model)
@@ -120,7 +127,7 @@ trainer = transformers.Trainer(
         logging_steps=25,              # When to start reporting loss
         logging_dir="./logs",        # Directory for storing logs
         save_strategy="steps",       # Save the model checkpoint every logging step
-        save_steps=50,                # Save checkpoints every 50 steps
+        save_steps=100,                # Save checkpoints every 50 steps
         evaluation_strategy="steps", # Evaluate the model every logging step
         eval_steps=50,               # Evaluate and
         do_eval=True,                # Perform evaluation at the end of training
@@ -131,5 +138,5 @@ trainer = transformers.Trainer(
 )
 
 model.config.use_cache = False  # silence the warnings. Please re-enable for inference!
-trainer.train(resume_from_checkpoint=True)
+trainer.train()
 
