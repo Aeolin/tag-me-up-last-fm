@@ -27,5 +27,7 @@
     "hardcore punk": ["hardcore punk", "hardcore-punk"],
     "india": ["indian", "india"],
     "schlager": ["schlager", "deutsche schlager"],
-    "alternative metal": ["alternative metal", "alt metal"]
+    "alternative metal": ["alternative metal", "alt metal"],
+    "indietronic": ["indietronic", "indietonic"],
+    
 }
