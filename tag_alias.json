@@ -8,7 +8,7 @@
     "nepal": ["nepal", "nepali"],
     "folk pop": ["folk pop", "pop-folk"],
     "colombia": ["colombia", "colombian"],
-    "rythm and blues": ["r and b", "r&amp;b", "rythm and blues"],
+    "rhythm and blues": ["r and b", "r&amp;b", "rhythm and blues"],
     "brasil": ["brasil", "brazilian"],
     "pop rap": ["pop-rap", "pop rap"],
     "death metal": ["death metal", "-death metal-"],
@@ -19,5 +19,13 @@
     "pop rock": ["pop rock", "pop-rock"],
     "k-pop": ["k-pop", "kpop"],
     "j-pop": ["j-pop", "jpop"],
-    "dance pop": ["dance-pop", "dance pop"]
+    "dance pop": ["dance-pop", "dance pop"],
+    "jazz standard": ["jazz standard", "jazzstandard"],
+    "dream pop": ["dream pop", "dreampop"],
+    "chillhop": ["chillhop", "chill hop"],
+    "electronic": ["electronic", "electronic music"],
+    "hardcore punk": ["hardcore punk", "hardcore-punk"],
+    "india": ["indian", "india"],
+    "schlager": ["schlager", "deutsche schlager"],
+    "alternative metal": ["alternative metal", "alt metal"]
 }
