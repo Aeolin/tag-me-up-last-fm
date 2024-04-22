@@ -1,0 +1,23 @@
+{
+    "azerbaijan": ["azerbaijan", "azeri"],
+    "dominican": ["dominican republic", "dominican"],
+    "german": ["deutsch", "german"],
+    "melancholic": ["melancholy", "melancholic", "-melancholic-", "melancolica"],
+    "idian-indie": ["indie india", "indian indie"],
+    "christmas": ["christmas", "xmas", "christmas tag"],
+    "nepal": ["nepal", "nepali"],
+    "folk pop": ["folk pop", "pop-folk"],
+    "colombia": ["colombia", "colombian"],
+    "rythm and blues": ["r and b", "r&amp;b", "rythm and blues"],
+    "brasil": ["brasil", "brazilian"],
+    "pop rap": ["pop-rap", "pop rap"],
+    "death metal": ["death metal", "-death metal-"],
+    "thrash metal": ["trash metal", "thrash metal"],
+    "ska revival": ["ska revival", "two-tone ska revival"],
+    "conscious hip hop": ["conscious hip-hop", "conscious hip hop"],
+    "ballad": ["ballad", "ballads"],
+    "pop rock": ["pop rock", "pop-rock"],
+    "k-pop": ["k-pop", "kpop"],
+    "j-pop": ["j-pop", "jpop"],
+    "dance pop": ["dance-pop", "dance pop"]
+}
