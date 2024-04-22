@@ -29,6 +29,8 @@ british,598
 funk,575
 emo rap,550
 french rap,527
+alternative rap,99
+gangsta rap,99
 experimental,524
 classic rock,498
 dirty south,495
@@ -71,7 +73,6 @@ ska,227
 russian,222
 electropop,220
 usa,218
-instrumental,218
 romanian hip-hop,204
 romanian,204
 east coast rap,200
@@ -114,8 +115,6 @@ french hip hop,106
 german,106
 post-rock,106
 soundtrack,105
-gangsta rap,105
-alternative rap,100
 vocal,100
 psychedelic,99
 mexico,98
@@ -159,18 +158,12 @@ jam,62
 martial industrial,62
 progressive,61
 kpop,61
-lana del rey,61
 indonesian,60
 geek music,60
-rap nerd,60
 jam band,60
 nigeria,60
-one direction,59
-poetry,59
 cold wave,59
-lady antebellum,57
 post-metal,57
-miley cyrus,57
 10s,56
 turkish,56
 disco,56
@@ -181,12 +174,8 @@ christian ska,53
 piano,53
 soft rock,53
 parody,52
-2017,52
 chillout,51
-2018,51
-oasis,51
 modern country,51
-led zeppelin,50
 epic,50
 noise,50
 opm,50
@@ -213,7 +202,6 @@ retro pop,42
 deathcore,41
 mellow,41
 hiphop,41
-2014,41
 melancholy,41
 jersey club,41
 skate punk,41
@@ -221,10 +209,8 @@ yandex music,40
 african,40
 london,40
 trance,39
-nct,39
 blues rock,39
 uk hip hop,38
-maroon 5,38
 psychill,38
 screamo,38
 hip hop mexicano,37
@@ -245,7 +231,6 @@ spanish pop,35
 surf,34
 ls,34
 dance-pop,34
-namie amuro,34
 reggaeton,34
 art rock,33
 underground hip hop,33
@@ -267,7 +252,6 @@ brutal death metal,31
 sinaloa,31
 goblincore,31
 irapuato,31
-lara fabian,30
 tanzania,30
 english lyrics,30
 edm,30
@@ -289,7 +273,6 @@ avant-folk,28
 glam rock,28
 minimal,28
 party,28
-beats,28
 comedy,27
 puerto rico,26
 indo,26
@@ -449,3 +432,58 @@ alt metal,3
 indietonic,3
 soul funk,3
 jazzstandard,4
+folkpop,2
+russian pop,2
+uk hip-hop,2
+post-black metal,2
+abstract hiphop,2
+uplifting trance,2
+90s pop,2
+acoustic pop,2
+piano pop,2
+hip pop,2
+alternative trap,2
+hardcore hip-hop,2
+trap metal,2
+punkrock,2
+electro-industrial,2
+new york hip hop,2
+pop art,2
+emo-pop,2
+classic metal,2
+supertones,2
+trap rap,2
+nu french rap,2
+ska ska,2
+smooth hip-hop,2
+mumble rap,2
+freestyle,2
+1980s,2
+chinese,2
+minimal pop,2
+german lyrics,2
+gabber,2
+twerk,2
+glitch pop,2
+lofi,2
+synthrock,2
+deep house,2
+hard rock n roll,2
+bitpop,2
+bebop,2
+persian,2
+synthwave,2
+indie hip-hop,2
+garage rock,2
+rock pop,2
+pop alternative,2
+african danchall,2
+rap metal,2
+alternative dance,2
+nu disco,2
+uk bass,2
+francais,2
+brazil,1
+avant folk,1
+uk trap,1
+pop music,1
