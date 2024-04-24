@@ -33,23 +33,24 @@ base_model = AutoModelForCausalLM.from_pretrained(
 )
 
 eval_tokenizer = AutoTokenizer.from_pretrained(base_model_id, add_bos_token=True, trust_remote_code=True)
-ft_model = base_model # PeftModel.from_pretrained(base_model, "mistral-tag-me-up-daddy-3/checkpoint-500")
+ft_model = base_model #PeftModel.from_pretrained(base_model, "mistral-tag-me-up-daddy-3/checkpoint-500")
 
 curated_tags = json.load(open('curated_tags.json'))
 
 def format_prompt(song):
-    return f'[INST]<<SYS>>Tag the song based on the lyrics, only respond in json {{"tags": []}}\nlegal tags: [{curated_tags}]<</SYS>>\n[{song["PrimaryArtistName"]}]\n{song["Lyrics"]}[/INST]'
+    return f'[INST]<<SYS>>Tag the song based on the lyrics, only respond in json {{"tags": []}}<</SYS>>\n[{song["PrimaryArtistName"]}]\n{song["Lyrics"]}[/INST]'
 
 songs = None
 with open('evaluation_data/all_songs.json', 'rt', encoding='utf8') as infile:
     songs = json.load(infile)
 
-random.seed(42)
+
 def get_random():
     song = random.choice(songs)
     songs.remove(song)
     return song
 
+random.seed(42)
 random_selection = [get_random() for x in range(8000)]
 
 for song in tqdm(random_selection, total=len(random_selection)):
@@ -67,5 +68,5 @@ for song in tqdm(random_selection, total=len(random_selection)):
         except Exception as error:
             print(error)
 
-with open('predictions_basemodel_tags_evaluation.json', 'wt', encoding='utf8') as outfile:
-    json.dump(songs, outfile, indent=2)
+with open('predictions_basemodel_blind_evaluation.json', 'wt', encoding='utf8') as outfile:
+    json.dump(random_selection, outfile, indent=2)
