@@ -1,3 +1,4 @@
 *.swp
 *.twbr
 /wandb
+/.venv
