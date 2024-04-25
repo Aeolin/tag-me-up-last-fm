@@ -1,0 +1,68 @@
+% !TEX root = documentation.tex
+
+%-------------------------
+% imports
+% ------------------------
+\usepackage[english]{babel}
+\usepackage[left=2cm,top=1.5cm,right=2cm,bottom=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{abstract}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage[affil-it]{authblk} 
+\usepackage{newtxtext} 
+\usepackage{newtxmath}
+\usepackage{apacite}
+\setkomafont{disposition}{\bfseries}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{titlesec}
+\captionsetup[figure]{font=small}
+\lstset{
+  basicstyle=\fontsize{10}\selectfont\ttfamily
+}
+
+
+%-------------------------
+% configuration
+% ------------------------
+
+% paragraph indent
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt}
+
+
+\titleformat{\section}{\raggedright\normalfont\fontsize{16}{18}\bfseries}{\thesection.}{0.5em}{}
+\titlespacing{\section}{0pt}{16pt}{8pt}
+
+\titleformat{\subsection}{\raggedright\normalfont\fontsize{14}{16}\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing{\subsection}{0pt}{14pt}{6pt}
+
+
+% hyperlink colors
+\hypersetup{
+         colorlinks,
+         citecolor=black,
+         filecolor=black,
+         linkcolor=black,
+         urlcolor=black,
+         pdfborder=0 0 0
+}
+
+\bibliographystyle{apacite}
+
+\definecolor{ttgray}{gray}{0.4}
+\setlength{\skip\footins}{24pt}
+
+
+\newcommand{\ttline}[1]{%
+  {\fontsize{10}{8}\selectfont \textcolor{ttgray}{\textit{\texttt{"#1"}}}}%
+}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
