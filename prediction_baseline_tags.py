@@ -38,7 +38,7 @@ if __name__ == "__main__":
         songs = json.load(infile)
 
     set_start_method('spawn')
-    with Pool(processes=4) as pool:  # Adjust number of processes based on your system's capabilities 
+    with Pool(processes=6) as pool:  # Adjust number of processes based on your system's capabilities 
         results = list(tqdm(pool.imap(process_song, songs), total=len(songs)))
         with open('evaluation_results/baseline-tags/predictions.json', 'wt', encoding='utf8') as outfile:
             json.dump(results, outfile, indent=2)
@@ -64,13 +64,13 @@ else:
         quantization_config=bnb_config,  # Same quantization config as before
         device_map="auto",
         trust_remote_code=True,
-        attn_implementation="flash_attention_2"
+       # attn_implementation="flash_attention_2"
     )
 
     eval_tokenizer = AutoTokenizer.from_pretrained(base_model_id, add_bos_token=True, trust_remote_code=True)
     ft_model = base_model#PeftModel.from_pretrained(base_model, "mistral-tag-me-up-daddy-3/checkpoint-500")
 
-    curated_tags = json.load(open('curated_tags.json'))
+    curated_tags = json.load(open('evaluation_results/tags/curated_tags.json'))
     def format_prompt(song):
         return f'[INST]<<SYS>>Tag the song based on the lyrics, only respond in json {{"tags": []}}\nlegal tags: [{curated_tags}]<</SYS>>\n[{song["PrimaryArtistName"]}]\n{song["Lyrics"]}[/INST]'
 
